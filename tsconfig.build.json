@@ -6,6 +6,6 @@
         "noEmit": false,
         "outDir": "./build",
         "declaration": true,
-        "declarationDir": "./typings"
+        "declarationDir": "./build"
     }
 }

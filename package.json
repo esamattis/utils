@@ -2,22 +2,22 @@
     "name": "@epeli/utils",
     "version": "0.1.0",
     "description": "",
-    "main": "build/src/index.js",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "repository": {
         "url": "https://github.com/epeli/utils"
     },
     "scripts": {
         "test": "tsc && npm run dtslint && jest",
-        "build": "tsc --project tsconfig.build.json",
-        "clean": "rm build/ typings/ -rf",
-        "dtslint": "tslint --project tsconfig.dtslint.json"
+        "build": "npm run test && tsc --project tsconfig.build.json && mv build/src lib && rm -rf build",
+        "clean": "rm -rf lib build",
+        "dtslint": "tslint --project tsconfig.dtslint.json",
+        "prepublish": "npm run build"
     },
     "author": "",
     "license": "ISC",
-    "types": "./typings/src/index.d.ts",
     "files": [
-        "build/src",
-        "typings/src"
+        "lib"
     ],
     "devDependencies": {
         "@types/jest": "^23.3.2",
