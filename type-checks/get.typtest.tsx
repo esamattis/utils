@@ -23,7 +23,6 @@ const res3: string | null = get(foo, o => o.dong);
 const res4: number | null = get(foo, o => o.arrOb[0].foo);
 const res8: number | null = get(foo.foo, o => o.bar.num);
 
-// $ExpectType string
 get(foo, o => o.arrOb[0].foo);
 
 const res5: number = get(foo, 1, o => o.foo.bar.num);
