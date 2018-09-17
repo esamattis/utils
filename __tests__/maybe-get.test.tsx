@@ -1,11 +1,11 @@
-import {get} from "../src/get";
+import {maybeGet} from "../src/maybe-get";
 
 test("simple", () => {
-    expect(get({foo: 1}, o => o.foo)).toBe(1);
+    expect(maybeGet({foo: 1}, o => o.foo)).toBe(1);
 });
 
 test("simple with default", () => {
-    expect(get({foo: 1}, 2, o => o.foo)).toBe(1);
+    expect(maybeGet({foo: 1}, 2, o => o.foo)).toBe(1);
 });
 
 test("handle missing value", () => {
@@ -17,7 +17,7 @@ test("handle missing value", () => {
 
     const ding: Ding = {};
 
-    expect(get(ding, o => o.foo.bar)).toBe(null);
+    expect(maybeGet(ding, o => o.foo.bar)).toBe(null);
 });
 
 test("handle missing value with default", () => {
@@ -29,7 +29,7 @@ test("handle missing value with default", () => {
 
     const ding: Ding = {};
 
-    expect(get(ding, 3, o => o.foo.bar)).toBe(3);
+    expect(maybeGet(ding, 3, o => o.foo.bar)).toBe(3);
 });
 
 test("does not break with falsy values", () => {
@@ -47,8 +47,8 @@ test("does not break with falsy values", () => {
         },
     };
 
-    expect(get(ding, 3, o => o.foo.num)).toBe(0);
-    expect(get(ding, "", o => o.foo.str)).toBe("");
+    expect(maybeGet(ding, 3, o => o.foo.num)).toBe(0);
+    expect(maybeGet(ding, "", o => o.foo.str)).toBe("");
 });
 
 test("can go through arrays", () => {
@@ -60,5 +60,5 @@ test("can go through arrays", () => {
         arr: [{bar: 2}, {bar: 4}],
     };
 
-    expect(get(ding, o => o.arr[1].bar)).toBe(4);
+    expect(maybeGet(ding, o => o.arr[1].bar)).toBe(4);
 });

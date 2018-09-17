@@ -12,18 +12,18 @@ export type DeepRequired<T> = T extends Primitive
                   : DeepRequired<T[P]>
       };
 
-export function get<T, R>(
+export function maybeGet<T, R>(
     source: T,
     getter: (source: DeepRequired<T>) => R,
 ): R | null;
 
-export function get<T, D, R>(
+export function maybeGet<T, D, R>(
     source: T,
     defaulValue: D,
     getter: (source: DeepRequired<T>) => R,
 ): R | D;
 
-export function get(...args: any[]): any {
+export function maybeGet(...args: any[]): any {
     if (args.length === 2) {
         const [source, getter] = args;
         return realGet(source, null, getter);
@@ -67,3 +67,5 @@ function realGet(
 
     return value;
 }
+
+export default maybeGet;
