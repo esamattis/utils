@@ -24,5 +24,8 @@ export function get<T, D, R>(
 ): R | D;
 
 export function get(...args: any[]): any {
-    return "sdf";
+    if (args.length == 2) {
+        const [source, getter] = args;
+        return getter(source);
+    }
 }
