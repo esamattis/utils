@@ -1,4 +1,4 @@
-import {maybeGet} from "../src/maybe-get";
+import {maybeGet} from "../src/maybeGet";
 
 interface Foo {
     foo?: {

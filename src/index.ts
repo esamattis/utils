@@ -1,1 +1,1 @@
-export * from "./maybe-get";
+export * from "./maybeGet";

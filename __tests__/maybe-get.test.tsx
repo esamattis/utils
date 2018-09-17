@@ -1,4 +1,4 @@
-import {maybeGet} from "../src/maybe-get";
+import {maybeGet} from "../src/maybeGet";
 
 test("simple", () => {
     expect(maybeGet({foo: 1}, o => o.foo)).toBe(1);
