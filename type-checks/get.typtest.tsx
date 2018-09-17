@@ -21,3 +21,6 @@ const res1: string = get(foo, o => o.ding);
 const res2: number = get(foo, o => o.arr[0]);
 const res3: string = get(foo, o => o.dong);
 const res4: number = get(foo, o => o.arrOb[0].foo);
+
+// $ExpectType string
+get(foo, o => o.arrOb[0].foo);
