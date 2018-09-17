@@ -16,11 +16,14 @@ interface Foo {
 
 declare const foo: Foo;
 
-const res: number = get(foo, o => o.foo.bar.num);
-const res1: string = get(foo, o => o.ding);
-const res2: number = get(foo, o => o.arr[0]);
-const res3: string = get(foo, o => o.dong);
-const res4: number = get(foo, o => o.arrOb[0].foo);
+const res: number | null = get(foo, o => o.foo.bar.num);
+const res1: string | null = get(foo, o => o.ding);
+const res2: number | null = get(foo, o => o.arr[0]);
+const res3: string | null = get(foo, o => o.dong);
+const res4: number | null = get(foo, o => o.arrOb[0].foo);
 
 // $ExpectType string
 get(foo, o => o.arrOb[0].foo);
+
+const res5: number = get(foo, 1, o => o.foo.bar.num);
+const res6: number | string = get(foo, "s", o => o.foo.bar.num);

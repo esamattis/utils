@@ -12,7 +12,17 @@ export type DeepRequired<T> = T extends Primitive
                   : DeepRequired<T[P]>
       };
 
-export function get<T, R>(source: T, getter: (source: DeepRequired<T>) => R): R;
+export function get<T, R>(
+    source: T,
+    getter: (source: DeepRequired<T>) => R,
+): R | null;
+
+export function get<T, D, R>(
+    source: T,
+    defaulValue: D,
+    getter: (source: DeepRequired<T>) => R,
+): R | D;
+
 export function get(...args: any[]): any {
     return "sdf";
 }
