@@ -1,0 +1,31 @@
+{
+    "name": "@epeli/utils",
+    "version": "0.1.0",
+    "description": "",
+    "main": "build/src/index.js",
+    "repository": {
+        "url": "https://github.com/epeli/utils"
+    },
+    "scripts": {
+        "test": "tsc --project tsconfig.build.json --noEmit && tslint --project tsconfig.json && jest",
+        "generate-typings": "tsc --project tsconfig.build.json",
+        "type-test": "tslint --project tsconfig.json"
+    },
+    "author": "",
+    "license": "ISC",
+    "types": "./typings/src/index.d.ts",
+    "files": [
+        "build/src",
+        "typings/src"
+    ],
+    "devDependencies": {
+        "@types/jest": "^23.3.2",
+        "dtslint": "^0.3.0",
+        "jest": "^23.6.0",
+        "prettier": "^1.14.2",
+        "redux": "^4.0.0",
+        "ts-jest": "^23.1.4",
+        "tslint": "^5.11.0",
+        "typescript": "^3.0.3"
+    }
+}
