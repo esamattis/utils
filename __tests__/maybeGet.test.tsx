@@ -48,7 +48,7 @@ test("does not break with falsy values", () => {
     };
 
     expect(maybeGet(ding, 3, o => o.foo.num)).toBe(0);
-    expect(maybeGet(ding, "", o => o.foo.str)).toBe("");
+    expect(maybeGet(ding, "default", o => o.foo.str)).toBe("");
 });
 
 test("can go through arrays", () => {
