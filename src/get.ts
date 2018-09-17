@@ -24,8 +24,15 @@ export function get<T, D, R>(
 ): R | D;
 
 export function get(...args: any[]): any {
-    if (args.length == 2) {
+    if (args.length === 2) {
         const [source, getter] = args;
         return getter(source);
     }
+
+    if (args.length === 3) {
+        const [source, defaultValue, getter] = args;
+        return getter(source);
+    }
+
+    throw new Error("Invalid argument count for get()");
 }
