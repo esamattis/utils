@@ -26,13 +26,44 @@ export function get<T, D, R>(
 export function get(...args: any[]): any {
     if (args.length === 2) {
         const [source, getter] = args;
-        return getter(source);
+        return realGet(source, null, getter);
     }
 
     if (args.length === 3) {
         const [source, defaultValue, getter] = args;
-        return getter(source);
+        return realGet(source, defaultValue, getter);
     }
 
     throw new Error("Invalid argument count for get()");
+}
+
+function realGet(
+    source: any,
+    defaultValue: unknown,
+    getter: (source: any) => any,
+) {
+    const recordedPath: string[] = [];
+    const recorder: any = new Proxy(source, {
+        get(_obj, prop) {
+            recordedPath.push(prop as string);
+            return recorder;
+        },
+    });
+
+    getter(recorder);
+
+    let value: any = source;
+
+    while (recordedPath.length) {
+        const prop = recordedPath.shift();
+        if (prop) {
+            value = value[prop];
+        }
+
+        if (value === null || value === undefined) {
+            return defaultValue;
+        }
+    }
+
+    return value;
 }
