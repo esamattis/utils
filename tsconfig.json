@@ -1,4 +1,5 @@
 {
+    "exclude": ["type-checks"],
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
