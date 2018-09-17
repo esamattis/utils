@@ -1,4 +1,11 @@
 {
     "extends": "./tsconfig.json",
-    "exclude": ["type-checks"]
+    "exclude": ["type-checks"],
+    "compilerOptions": {
+        "sourceMap": true,
+        "noEmit": false,
+        "outDir": "./build",
+        "declaration": true,
+        "declarationDir": "./typings"
+    }
 }

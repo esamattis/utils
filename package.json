@@ -7,9 +7,10 @@
         "url": "https://github.com/epeli/utils"
     },
     "scripts": {
-        "test": "tsc --project tsconfig.build.json --noEmit && tslint --project tsconfig.json && jest",
-        "generate-typings": "tsc --project tsconfig.build.json",
-        "type-test": "tslint --project tsconfig.json"
+        "test": "tsc && npm run dtslint && jest",
+        "build": "tsc --project tsconfig.build.json",
+        "clean": "rm build/ typings/ -rf",
+        "dtslint": "tslint --project tsconfig.dtslint.json"
     },
     "author": "",
     "license": "ISC",

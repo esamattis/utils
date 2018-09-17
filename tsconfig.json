@@ -2,18 +2,11 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+        "noEmit": true,
         "lib": ["es6", "dom"],
-        "sourceMap": true,
-        "outDir": "./build",
-        "declaration": true,
-        "declarationDir": "./typings",
-        "jsx": "react",
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
         "strict": true,
-        "esModuleInterop": true,
-        "noImplicitReturns": true,
-        "noImplicitThis": true,
-        "noImplicitAny": true
+        "esModuleInterop": true
     }
 }
