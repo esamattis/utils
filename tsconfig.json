@@ -1,5 +1,4 @@
 {
-    "exclude": ["__dtslint__"],
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
