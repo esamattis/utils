@@ -29,6 +29,9 @@ maybeGet(foo, o => o!.arrOb[0]!.foo);
 const res5: number = maybeGet(foo, 1, o => o!.foo!.bar!.num);
 const res6: number | string = maybeGet(foo, "s", o => o!.foo!.bar!.num);
 
+// $ExpectError
+const res10: string = maybeGet(foo, 1, o => o!.foo!.bar!.num);
+
 interface GQL_Node {
     hello?: string;
 }
