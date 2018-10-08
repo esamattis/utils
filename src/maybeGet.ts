@@ -1,4 +1,4 @@
-import {NotNull} from "../deep-required";
+import {NotNull} from "./deep-required";
 
 export function maybeGet<T, R>(
     source: T,
