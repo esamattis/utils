@@ -1,32 +1,20 @@
-type NotNill<T> = T extends null | undefined ? never : T;
-
-type Primitive = undefined | null | boolean | string | number | Function;
-
-export type DeepRequired<T> = T extends Primitive
-    ? NotNill<T>
-    : {
-          [P in keyof T]-?: T[P] extends Array<infer U>
-              ? Array<DeepRequired<U>>
-              : T[P] extends ReadonlyArray<infer U2>
-                  ? DeepRequired<U2>
-                  : DeepRequired<T[P]>
-      };
+import {NotNull} from "../deep-required";
 
 export function maybeGet<T, R>(
     source: T,
-    getter: (source: DeepRequired<T>) => R,
-): R | null;
+    getter: (source: T) => R,
+): NotNull<R> | undefined;
 
 export function maybeGet<T, D, R>(
     source: T,
     defaulValue: D,
-    getter: (source: DeepRequired<T>) => R,
-): R | D;
+    getter: (source: T) => R,
+): NotNull<R> | D;
 
 export function maybeGet(...args: any[]): any {
     if (args.length === 2) {
         const [source, getter] = args;
-        return realGet(source, null, getter);
+        return realGet(source, undefined, getter);
     }
 
     if (args.length === 3) {

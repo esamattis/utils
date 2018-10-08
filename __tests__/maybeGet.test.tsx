@@ -17,7 +17,7 @@ test("handle missing value", () => {
 
     const ding: Ding = {};
 
-    expect(maybeGet(ding, o => o.foo.bar)).toBe(null);
+    expect(maybeGet(ding, o => o.foo!.bar)).toBe(undefined);
 });
 
 test("handle missing value with default", () => {
@@ -29,7 +29,7 @@ test("handle missing value with default", () => {
 
     const ding: Ding = {};
 
-    expect(maybeGet(ding, 3, o => o.foo.bar)).toBe(3);
+    expect(maybeGet(ding, 3, o => o.foo!.bar)).toBe(3);
 });
 
 test("does not break with falsy values", () => {
@@ -47,8 +47,8 @@ test("does not break with falsy values", () => {
         },
     };
 
-    expect(maybeGet(ding, 3, o => o.foo.num)).toBe(0);
-    expect(maybeGet(ding, "default", o => o.foo.str)).toBe("");
+    expect(maybeGet(ding, 3, o => o.foo!.num)).toBe(0);
+    expect(maybeGet(ding, "default", o => o.foo!.str)).toBe("");
 });
 
 test("can go through arrays", () => {
@@ -60,5 +60,5 @@ test("can go through arrays", () => {
         arr: [{bar: 2}, {bar: 4}],
     };
 
-    expect(maybeGet(ding, o => o.arr[1].bar)).toBe(4);
+    expect(maybeGet(ding, o => o.arr![1]!.bar)).toBe(4);
 });
