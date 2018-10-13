@@ -1,8 +1,18 @@
 # Epeli's Javascript / Typescript utilities
 
 Some utility functions I use across multiple projects that
-are not available in any de facto utility libraries like lodash.
+are not available in any de facto utility libraries like Lodash.
+
 Very Typescript heavy.
+
+DISCLAIMER:
+
+Not maintaining this for anyone else. This is open source because why not.
+Might do breaking changes at will - although I try follow semver but I
+won't be doing changelogs.
+
+So if you find something useful from this I suggest you just copy paste it
+to your project.
 
 Install
 
