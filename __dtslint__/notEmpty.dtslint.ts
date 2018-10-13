@@ -1,4 +1,4 @@
-import {notEmpty} from "../src/noEmpty";
+import {notEmpty} from "../src/notEmpty";
 
 const withNulls: (string | null | undefined)[] = [];
 
