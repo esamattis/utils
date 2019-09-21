@@ -15,12 +15,11 @@ jobs:
                   node-version: 10
             - name: Make prelease to npm
               run: |
-                  #node -v
-                  #echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-                  #npm whoami
+                  echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+                  npm whoami
                   npm ci
                   npm test
-                  # npm publish
+                  npm publish
                   echo "GITHUB_REF: $GITHUB_REF"
                   echo "GITHUB_SHA: $GITHUB_SHA"
               env:
