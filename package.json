@@ -1,31 +1,31 @@
 {
-  "name": "@epeli/utils",
-  "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "repository": {
-    "url": "https://github.com/epeli/utils"
-  },
-  "scripts": {
-    "test": "npm run dtslint && jest",
-    "build": "npm run test && tsc --project tsconfig.build.json && rm -rf lib && mv build/src lib && rm -rf build",
-    "clean": "rm -rf lib build",
-    "dtslint": "tslint --project tsconfig.dtslint.json",
-    "prepublishOnly": "npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "files": [
-    "lib"
-  ],
-  "devDependencies": {
-    "@types/jest": "^24.0.18",
-    "dtslint": "^0.9.8",
-    "jest": "^24.9.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.1.0",
-    "tslint": "^5.20.0",
-    "typescript": "^3.6.3"
-  }
+    "name": "@epeli/utils",
+    "version": "1.0.0",
+    "description": "",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "repository": {
+        "url": "https://github.com/epeli/utils"
+    },
+    "scripts": {
+        "test": "npm run dtslint && jest",
+        "build": "npm run test && tsc --project tsconfig.build.json && rm -rf lib && mv build/src lib && rm -rf build",
+        "clean": "rm -rf lib build",
+        "dtslint": "tslint --project tsconfig.dtslint.json",
+        "release": "np --no-publish",
+        "prepublishOnly": "npm run build"
+    },
+    "author": "",
+    "license": "ISC",
+    "files": ["lib"],
+    "devDependencies": {
+        "@types/jest": "^24.0.18",
+        "dtslint": "^0.9.8",
+        "jest": "^24.9.0",
+        "np": "^5.1.0",
+        "prettier": "^1.18.2",
+        "ts-jest": "^24.1.0",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.3"
+    }
 }
