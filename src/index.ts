@@ -1,4 +1,3 @@
-export * from "./maybeGet";
 export * from "./strictAssign";
 export * from "./withTimeout";
 export * from "./DeepRequired";

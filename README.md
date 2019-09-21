@@ -35,15 +35,6 @@ Eg. the return type is always the same as target.
 
 Works nicely with Immer.
 
-## maybeGet(obj: T, default?: R, getter: (obj: T) => R): R
-
-Get value from object with possibly null or undefined values.
-
-Basically same as [facebookincubator/idx](https://github.com/facebookincubator/idx)
-but implemented with Proxies.
-
-You may use the Typescript null assertion operator safely in the getter callback.
-
 ## wait(time: number): Promise<void>
 
 `setTimeout` for async functions.
