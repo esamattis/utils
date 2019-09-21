@@ -1,6 +1,6 @@
 {
     "name": "@epeli/utils",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -17,7 +17,9 @@
     },
     "author": "",
     "license": "ISC",
-    "files": ["lib"],
+    "files": [
+        "lib"
+    ],
     "devDependencies": {
         "@types/jest": "^24.0.18",
         "dtslint": "^0.9.8",
