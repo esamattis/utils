@@ -1,26 +1,14 @@
-name: Make npm release
-
 on:
     release:
         types: [published]
 
 jobs:
-    release:
+    prerelease:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
-            - name: Setup Node.js
-              uses: actions/setup-node@v1
+            - name: Make stable release to npm
+              uses: epeli/npm-release@v1
               with:
-                  node-version: 10
-            - name: Make prelease to npm
-              run: |
-                  echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
-                  npm whoami
-                  npm ci
-                  npm test
-                  npm publish
-                  echo "GITHUB_REF: $GITHUB_REF"
-                  echo "GITHUB_SHA: $GITHUB_SHA"
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+                  type: stable
+                  token: ${{ secrets.NPM_TOKEN }}
