@@ -44,4 +44,4 @@ Works nicely with Immer.
 Resolve promise within the `time` (ms) or reject with the message.
 
 
-<!-- release test 2 -->
+<!-- release test 3 -->
