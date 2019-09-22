@@ -42,3 +42,6 @@ Works nicely with Immer.
 ## withTimeout(message: string, time: number, promise: Promise)
 
 Resolve promise within the `time` (ms) or reject with the message.
+
+
+<!-- release test 1 -->
