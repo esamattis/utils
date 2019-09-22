@@ -5,6 +5,7 @@ on:
 
 jobs:
     prerelease:
+        runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
             - name: Make prerelease to npm
